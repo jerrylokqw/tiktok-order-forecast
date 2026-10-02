@@ -1006,9 +1006,16 @@ html&gt;body{padding:0}&lt;/style&gt;
     @media(max-width:390px){#tk-three-mode .controls,#tk-three-mode .summary{grid-template-columns:1fr}}
   &lt;/style&gt;
 
-  &lt;h2&gt;TikTok Ads 三模式预算预测&lt;/h2&gt;
+  &lt;h2&gt;TikTok Ads 预算转化预测&lt;/h2&gt;
 
-  &lt;label class=&quot;form-label&quot;&gt;数据模式
+  &lt;label class=&quot;form-label&quot;&gt;业务模式
+    &lt;select class=&quot;form-select&quot; data-key=&quot;business&quot;&gt;
+      &lt;option value=&quot;toc&quot;&gt;ToC 独立站订单&lt;/option&gt;
+      &lt;option value=&quot;b2b&quot;&gt;ToB／OEM 线索与商机&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/label&gt;
+
+  &lt;label class=&quot;form-label&quot; data-toc&gt;数据模式
     &lt;select class=&quot;form-select&quot; data-key=&quot;mode&quot;&gt;
       &lt;option value=&quot;daily&quot;&gt;每日 CSV 模式｜准确度最高&lt;/option&gt;
       &lt;option value=&quot;summary&quot;&gt;30/60/90 天汇总模式｜中等准确度&lt;/option&gt;
@@ -1016,12 +1023,12 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;/select&gt;
   &lt;/label&gt;
 
-  &lt;section data-panel=&quot;daily&quot; class=&quot;controls&quot; aria-label=&quot;每日数据模式&quot;&gt;
+  &lt;section data-panel=&quot;daily&quot; data-toc class=&quot;controls&quot; aria-label=&quot;每日数据模式&quot;&gt;
     &lt;label class=&quot;form-label&quot;&gt;导入每日数据 CSV&lt;input class=&quot;form-control&quot; data-key=&quot;file&quot; type=&quot;file&quot; accept=&quot;.csv,.tsv,text/csv,text/tab-separated-values&quot;&gt;&lt;/label&gt;
     &lt;label class=&quot;form-label&quot;&gt;异常天处理&lt;select class=&quot;form-select&quot; data-key=&quot;outlier&quot;&gt;&lt;option value=&quot;trim&quot;&gt;剔除极端5%&lt;/option&gt;&lt;option value=&quot;keep&quot;&gt;保留全部&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
   &lt;/section&gt;
 
-  &lt;section data-panel=&quot;summary&quot; hidden aria-label=&quot;历史汇总模式&quot;&gt;
+  &lt;section data-panel=&quot;summary&quot; data-toc hidden aria-label=&quot;历史汇总模式&quot;&gt;
     &lt;div class=&quot;history&quot;&gt;
       &lt;div class=&quot;head&quot;&gt;独立周期&lt;/div&gt;&lt;div class=&quot;head&quot;&gt;广告消耗（$）&lt;/div&gt;&lt;div class=&quot;head&quot;&gt;有效订单&lt;/div&gt;
       &lt;div&gt;最近 0–30 天&lt;/div&gt;&lt;input class=&quot;form-control&quot; data-key=&quot;s30&quot; type=&quot;number&quot; min=&quot;0&quot; value=&quot;3000&quot;&gt;&lt;input class=&quot;form-control&quot; data-key=&quot;o30&quot; type=&quot;number&quot; min=&quot;0&quot; value=&quot;75&quot;&gt;
@@ -1030,7 +1037,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;/div&gt;
   &lt;/section&gt;
 
-  &lt;section data-panel=&quot;cold&quot; hidden class=&quot;controls&quot; aria-label=&quot;冷启动模式&quot;&gt;
+  &lt;section data-panel=&quot;cold&quot; data-toc hidden class=&quot;controls&quot; aria-label=&quot;冷启动模式&quot;&gt;
     &lt;label class=&quot;form-label&quot;&gt;参数方式&lt;select class=&quot;form-select&quot; data-key=&quot;benchmarkMode&quot;&gt;&lt;option value=&quot;auto&quot;&gt;自动参考值｜公开数据&lt;/option&gt;&lt;option value=&quot;manual&quot;&gt;手动输入｜自己的数据&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
     &lt;label class=&quot;form-label&quot;&gt;投放地区&lt;select class=&quot;form-select&quot; data-key=&quot;country&quot;&gt;&lt;option value=&quot;na&quot;&gt;北美（美国＋加拿大）&lt;/option&gt;&lt;option value=&quot;us&quot;&gt;美国&lt;/option&gt;&lt;option value=&quot;ca&quot;&gt;加拿大&lt;/option&gt;&lt;option value=&quot;uk&quot;&gt;英国&lt;/option&gt;&lt;option value=&quot;au&quot;&gt;澳大利亚&lt;/option&gt;&lt;option value=&quot;sea&quot;&gt;东南亚&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
     &lt;label class=&quot;form-label&quot;&gt;产品品类&lt;select class=&quot;form-select&quot; data-key=&quot;category&quot;&gt;&lt;option value=&quot;beauty&quot;&gt;美妆个护&lt;/option&gt;&lt;option value=&quot;apparel&quot;&gt;服装配饰&lt;/option&gt;&lt;option value=&quot;home&quot;&gt;家居用品&lt;/option&gt;&lt;option value=&quot;food&quot;&gt;食品饮料&lt;/option&gt;&lt;option value=&quot;toys&quot;&gt;玩具／艺术／收藏&lt;/option&gt;&lt;option value=&quot;sports&quot;&gt;运动户外&lt;/option&gt;&lt;option value=&quot;electronics&quot;&gt;消费电子&lt;/option&gt;&lt;option value=&quot;wellness&quot;&gt;健康保健&lt;/option&gt;&lt;option value=&quot;pet&quot;&gt;宠物用品&lt;/option&gt;&lt;option value=&quot;lifestyle&quot;&gt;生活方式／精品&lt;/option&gt;&lt;option value=&quot;general&quot;&gt;综合（全行业）&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
@@ -1041,9 +1048,9 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;div class=&quot;source-note text-small&quot; data-out=&quot;benchmarkSource&quot;&gt;—&lt;/div&gt;
   &lt;/section&gt;
 
-  &lt;div class=&quot;notice text-small&quot; data-out=&quot;modeNotice&quot; aria-live=&quot;polite&quot;&gt;请上传每日 CSV 后开始测算；未上传时不会使用演示数据。&lt;/div&gt;
+  &lt;div class=&quot;notice text-small&quot; data-toc data-out=&quot;modeNotice&quot; aria-live=&quot;polite&quot;&gt;请上传每日 CSV 后开始测算；未上传时不会使用演示数据。&lt;/div&gt;
 
-  &lt;section class=&quot;controls&quot; aria-label=&quot;目标与利润参数&quot;&gt;
+  &lt;section class=&quot;controls&quot; data-toc aria-label=&quot;目标与利润参数&quot;&gt;
     &lt;label class=&quot;form-label&quot;&gt;计划投入广告预算（$）&lt;input class=&quot;form-control&quot; data-key=&quot;budget&quot; type=&quot;number&quot; min=&quot;1&quot; value=&quot;5000&quot;&gt;&lt;/label&gt;
     &lt;label class=&quot;form-label&quot;&gt;预测周期（天）&lt;input class=&quot;form-control&quot; data-key=&quot;days&quot; type=&quot;number&quot; min=&quot;1&quot; max=&quot;92&quot; value=&quot;30&quot;&gt;&lt;/label&gt;
     &lt;label class=&quot;form-label&quot;&gt;平均客单价 AOV（$）&lt;input class=&quot;form-control&quot; data-key=&quot;aov&quot; type=&quot;number&quot; min=&quot;1&quot; value=&quot;80&quot;&gt;&lt;/label&gt;
@@ -1053,13 +1060,13 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;label class=&quot;form-label&quot;&gt;其他每单成本（$）&lt;input class=&quot;form-control&quot; data-key=&quot;other&quot; type=&quot;number&quot; min=&quot;0&quot; value=&quot;3&quot;&gt;&lt;/label&gt;
   &lt;/section&gt;
 
-  &lt;section class=&quot;summary&quot; data-results aria-live=&quot;polite&quot; hidden&gt;
+  &lt;section class=&quot;summary&quot; data-toc data-results aria-live=&quot;polite&quot; hidden&gt;
     &lt;div class=&quot;card viz-stat&quot;&gt;&lt;div class=&quot;text-muted&quot;&gt;保守有效订单&lt;/div&gt;&lt;div class=&quot;viz-stat-value tabular-nums&quot; data-out=&quot;ordersLow&quot;&gt;—&lt;/div&gt;&lt;div class=&quot;text-small text-muted&quot; data-out=&quot;confidence&quot;&gt;—&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card viz-stat&quot;&gt;&lt;div class=&quot;text-muted&quot;&gt;中位有效订单&lt;/div&gt;&lt;div class=&quot;viz-stat-value tabular-nums&quot; data-out=&quot;ordersMid&quot;&gt;—&lt;/div&gt;&lt;div class=&quot;text-small text-muted&quot; data-out=&quot;cpa&quot;&gt;—&lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;card viz-stat&quot;&gt;&lt;div class=&quot;text-muted&quot;&gt;乐观有效订单&lt;/div&gt;&lt;div class=&quot;viz-stat-value tabular-nums&quot; data-out=&quot;ordersHigh&quot;&gt;—&lt;/div&gt;&lt;div class=&quot;text-small text-muted&quot; data-out=&quot;orderRange&quot;&gt;—&lt;/div&gt;&lt;/div&gt;
   &lt;/section&gt;
 
-  &lt;div class=&quot;table-responsive&quot; data-results hidden aria-live=&quot;polite&quot;&gt;
+  &lt;div class=&quot;table-responsive&quot; data-toc data-results hidden aria-live=&quot;polite&quot;&gt;
     &lt;table class=&quot;table table-sm&quot;&gt;&lt;tbody&gt;
       &lt;tr&gt;&lt;th&gt;计算依据&lt;/th&gt;&lt;td class=&quot;text-end&quot; data-out=&quot;basis&quot;&gt;—&lt;/td&gt;&lt;/tr&gt;
       &lt;tr&gt;&lt;th&gt;计划广告预算&lt;/th&gt;&lt;td class=&quot;text-end&quot; data-out=&quot;adBudget&quot;&gt;—&lt;/td&gt;&lt;/tr&gt;
@@ -1069,6 +1076,42 @@ html&gt;body{padding:0}&lt;/style&gt;
       &lt;tr&gt;&lt;th&gt;中位订单下预计利润&lt;/th&gt;&lt;td class=&quot;text-end&quot; data-out=&quot;medianProfit&quot;&gt;—&lt;/td&gt;&lt;/tr&gt;
       &lt;tr&gt;&lt;th&gt;保守订单下预计利润&lt;/th&gt;&lt;td class=&quot;text-end&quot; data-out=&quot;safeProfit&quot;&gt;—&lt;/td&gt;&lt;/tr&gt;
       &lt;tr&gt;&lt;th&gt;扩量判断&lt;/th&gt;&lt;td class=&quot;text-end&quot; data-out=&quot;verdict&quot;&gt;—&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;&lt;/table&gt;
+  &lt;/div&gt;
+
+  &lt;section data-b2b hidden class=&quot;controls&quot; aria-label=&quot;ToB OEM 获客参数&quot;&gt;
+    &lt;label class=&quot;form-label&quot;&gt;获客路径&lt;select class=&quot;form-select&quot; data-key=&quot;leadPath&quot;&gt;&lt;option value=&quot;dm&quot;&gt;TikTok 私信询盘&lt;/option&gt;&lt;option value=&quot;instant&quot;&gt;TikTok 即时表单&lt;/option&gt;&lt;option value=&quot;landing&quot;&gt;官网落地页表单&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
+    &lt;label class=&quot;form-label&quot;&gt;广告预算（$）&lt;input class=&quot;form-control&quot; data-key=&quot;bBudget&quot; type=&quot;number&quot; min=&quot;1&quot; value=&quot;5000&quot;&gt;&lt;/label&gt;
+    &lt;label class=&quot;form-label&quot;&gt;预测周期（天）&lt;input class=&quot;form-control&quot; data-key=&quot;bDays&quot; type=&quot;number&quot; min=&quot;1&quot; max=&quot;365&quot; value=&quot;90&quot;&gt;&lt;/label&gt;
+    &lt;label class=&quot;form-label&quot;&gt;每条原始线索成本 CPL（$）&lt;input class=&quot;form-control&quot; data-key=&quot;cpl&quot; type=&quot;number&quot; min=&quot;1&quot; value=&quot;50&quot;&gt;&lt;/label&gt;
+    &lt;label class=&quot;form-label&quot;&gt;联系方式／需求有效率（%）&lt;input class=&quot;form-control&quot; data-key=&quot;leadValid&quot; type=&quot;number&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;60&quot;&gt;&lt;/label&gt;
+    &lt;label class=&quot;form-label&quot;&gt;MOQ 匹配率（%）&lt;input class=&quot;form-control&quot; data-key=&quot;moqRate&quot; type=&quot;number&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;40&quot;&gt;&lt;/label&gt;
+    &lt;label class=&quot;form-label&quot;&gt;进入正式报价率（%）&lt;input class=&quot;form-control&quot; data-key=&quot;quoteRate&quot; type=&quot;number&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;70&quot;&gt;&lt;/label&gt;
+    &lt;label class=&quot;form-label&quot;&gt;报价后成交率（%）&lt;input class=&quot;form-control&quot; data-key=&quot;closeRate&quot; type=&quot;number&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;20&quot;&gt;&lt;/label&gt;
+    &lt;label class=&quot;form-label&quot;&gt;平均首单合同金额（$）&lt;input class=&quot;form-control&quot; data-key=&quot;contract&quot; type=&quot;number&quot; min=&quot;0&quot; value=&quot;20000&quot;&gt;&lt;/label&gt;
+    &lt;label class=&quot;form-label&quot;&gt;首单毛利率（%）&lt;input class=&quot;form-control&quot; data-key=&quot;grossMargin&quot; type=&quot;number&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;30&quot;&gt;&lt;/label&gt;
+    &lt;label class=&quot;form-label&quot;&gt;每个商机跟进／打样成本（$）&lt;input class=&quot;form-control&quot; data-key=&quot;salesCost&quot; type=&quot;number&quot; min=&quot;0&quot; value=&quot;300&quot;&gt;&lt;/label&gt;
+    &lt;label class=&quot;form-label&quot;&gt;平均成交周期（天）&lt;input class=&quot;form-control&quot; data-key=&quot;salesCycle&quot; type=&quot;number&quot; min=&quot;1&quot; value=&quot;75&quot;&gt;&lt;/label&gt;
+    &lt;div class=&quot;source-note text-small&quot;&gt;ToB/OEM 暂不套用 ToC 行业基准。默认数字仅用于演示计算，请替换为 CRM、私信后台或表单历史数据。&lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;div data-b2b hidden class=&quot;notice text-small&quot; data-out=&quot;b2bNotice&quot; aria-live=&quot;polite&quot;&gt;线索不等于订单；成交通常跨月发生。&lt;/div&gt;
+
+  &lt;section data-b2b data-b2b-results hidden class=&quot;summary&quot; aria-live=&quot;polite&quot;&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;div class=&quot;text-muted&quot;&gt;预计原始线索&lt;/div&gt;&lt;div class=&quot;viz-stat-value tabular-nums&quot; data-out=&quot;rawLeads&quot;&gt;—&lt;/div&gt;&lt;div class=&quot;text-small text-muted&quot; data-out=&quot;leadCostLabel&quot;&gt;—&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;div class=&quot;text-muted&quot;&gt;预计合格商机&lt;/div&gt;&lt;div class=&quot;viz-stat-value tabular-nums&quot; data-out=&quot;opportunities&quot;&gt;—&lt;/div&gt;&lt;div class=&quot;text-small text-muted&quot; data-out=&quot;oppCost&quot;&gt;—&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;div class=&quot;text-muted&quot;&gt;预计成交客户&lt;/div&gt;&lt;div class=&quot;viz-stat-value tabular-nums&quot; data-out=&quot;customers&quot;&gt;—&lt;/div&gt;&lt;div class=&quot;text-small text-muted&quot; data-out=&quot;customerRange&quot;&gt;—&lt;/div&gt;&lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;div data-b2b data-b2b-results hidden class=&quot;table-responsive&quot; aria-live=&quot;polite&quot;&gt;
+    &lt;table class=&quot;table table-sm&quot;&gt;&lt;tbody&gt;
+      &lt;tr&gt;&lt;th&gt;获客路径&lt;/th&gt;&lt;td class=&quot;text-end&quot; data-out=&quot;pathLabel&quot;&gt;—&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;th&gt;预计有效线索&lt;/th&gt;&lt;td class=&quot;text-end&quot; data-out=&quot;validLeads&quot;&gt;—&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;th&gt;预计正式报价&lt;/th&gt;&lt;td class=&quot;text-end&quot; data-out=&quot;quotes&quot;&gt;—&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;th&gt;成交客户成本 CAC&lt;/th&gt;&lt;td class=&quot;text-end&quot; data-out=&quot;bCac&quot;&gt;—&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;th&gt;预计首单合同额&lt;/th&gt;&lt;td class=&quot;text-end&quot; data-out=&quot;contractValue&quot;&gt;—&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;th&gt;预计首单毛利（扣广告与跟进）&lt;/th&gt;&lt;td class=&quot;text-end&quot; data-out=&quot;bProfit&quot;&gt;—&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;th&gt;预计成交时间&lt;/th&gt;&lt;td class=&quot;text-end&quot; data-out=&quot;closeWindow&quot;&gt;—&lt;/td&gt;&lt;/tr&gt;
     &lt;/tbody&gt;&lt;/table&gt;
   &lt;/div&gt;
 
@@ -1085,7 +1128,8 @@ html&gt;body{padding:0}&lt;/style&gt;
       function dailyModel(rows,budget,days){let data=[...rows];if(q(&#x27;outlier&#x27;).value===&#x27;trim&#x27;&amp;&amp;data.length&gt;=20){const c=data.filter(r=&gt;r.orders&gt;0).map(r=&gt;r.spend/r.orders).sort((a,b)=&gt;a-b),lo=c[Math.floor(c.length*.025)],hi=c[Math.floor(c.length*.975)];data=data.filter(r=&gt;r.orders===0||(r.spend/r.orders&gt;=lo&amp;&amp;r.spend/r.orders&lt;=hi))}const sorted=[...data].sort((a,b)=&gt;a.spend-b.spend),n=Math.min(6,Math.max(3,Math.floor(sorted.length/15))),bins=[];for(let i=0;i&lt;n;i++){const p=sorted.slice(Math.floor(i*sorted.length/n),Math.floor((i+1)*sorted.length/n)),s=p.reduce((a,r)=&gt;a+r.spend,0),o=p.reduce((a,r)=&gt;a+r.orders,0);bins.push({x:s/p.length,cpa:o?s/o:Infinity})}let last=1;bins.forEach(b=&gt;{b.cpa=Math.max(last,Number.isFinite(b.cpa)?b.cpa:last);last=b.cpa});const interp=x=&gt;{if(x&lt;=bins[0].x)return bins[0].cpa;if(x&gt;=bins.at(-1).x){const a=bins.at(-2),b=bins.at(-1);return b.cpa+Math.max(0,(b.cpa-a.cpa)/(b.x-a.x||1))*(x-b.x)}for(let i=1;i&lt;bins.length;i++)if(x&lt;=bins[i].x){const a=bins[i-1],b=bins[i],t=(x-a.x)/(b.x-a.x);return a.cpa+t*(b.cpa-a.cpa)}};const cpa=interp(budget/days),orders=budget/cpa,allCpa=data.filter(r=&gt;r.orders&gt;0).map(r=&gt;r.spend/r.orders),mean=allCpa.reduce((a,x)=&gt;a+x,0)/allCpa.length,sd=Math.sqrt(allCpa.reduce((a,x)=&gt;a+(x-mean)**2,0)/Math.max(1,allCpa.length-1)),unc=Math.min(.5,Math.max(.12,(sd/mean)/Math.sqrt(Math.max(1,data.length/30))));return{cpa,orders,unc,basis:`${data.length}天每日数据 · 边际CPA曲线`,confidence:&#x27;高置信度&#x27;}}
       function summaryModel(budget){const r=[[+q(&#x27;s30&#x27;).value,+q(&#x27;o30&#x27;).value,.5],[+q(&#x27;s60&#x27;).value,+q(&#x27;o60&#x27;).value,.3],[+q(&#x27;s90&#x27;).value,+q(&#x27;o90&#x27;).value,.2]].filter(x=&gt;x[0]&gt;=0&amp;&amp;x[1]&gt;0),ws=r.reduce((a,x)=&gt;a+x[2],0),base=r.reduce((a,x)=&gt;a+x[2]*x[0]/x[1],0)/ws,recentSpend=Math.max(1,+q(&#x27;s30&#x27;).value),ratio=budget/recentSpend,penalty=ratio&gt;1?1+Math.min(.45,.18*Math.log(ratio)):1,total=r.reduce((a,x)=&gt;a+x[1],0),unc=Math.max(.18,.42/Math.sqrt(Math.max(1,total/25))),cpa=base*penalty;return{cpa,orders:budget/cpa,unc,basis:&#x27;三个独立30天周期 · 近期加权&#x27;,confidence:&#x27;中等置信度&#x27;}}
       function coldModel(budget){const valid=+q(&#x27;validRate&#x27;).value/100;if(q(&#x27;benchmarkMode&#x27;).value===&#x27;auto&#x27;){const b=benchmarks[q(&#x27;category&#x27;).value]||benchmarks.general;return{cpa:b.cpa/valid,orders:budget/b.cpa*valid,unc:.5,basis:`公开行业中位 CPA ${money(b.cpa)} × 退款后有效率`,confidence:&#x27;公开基准 · 低置信度&#x27;}}const cpm=+q(&#x27;cpm&#x27;).value,ctr=+q(&#x27;ctr&#x27;).value/100,cvr=+q(&#x27;cvr&#x27;).value/100,cpa=(cpm/1000)/Math.max(.000001,ctr*cvr*valid);return{cpa,orders:budget/cpa,unc:.5,basis:&#x27;手动 CPM × CTR × CVR × 有效率&#x27;,confidence:&#x27;手动假设 · 低置信度&#x27;}}
-      function update(){syncBenchmark();const mode=q(&#x27;mode&#x27;).value;root.querySelectorAll(&#x27;[data-panel]&#x27;).forEach(e=&gt;e.hidden=e.dataset.panel!==mode);let model=null,budget=Math.max(1,+q(&#x27;budget&#x27;).value||1),days=Math.max(1,+q(&#x27;days&#x27;).value||30);if(mode===&#x27;daily&#x27;){if(dailyRows)model=dailyModel(dailyRows,budget,days);set(&#x27;modeNotice&#x27;,dailyRows?`已载入 ${dailyRows.length} 天数据，仅在本地计算。`:&#x27;请上传每日 CSV 后开始测算；未上传时不会使用演示数据。&#x27;)}else if(mode===&#x27;summary&#x27;){model=summaryModel(budget);set(&#x27;modeNotice&#x27;,&#x27;请填写三个独立周期，不要填写累计30/60/90天数据。&#x27;)}else{model=coldModel(budget);set(&#x27;modeNotice&#x27;,q(&#x27;benchmarkMode&#x27;).value===&#x27;auto&#x27;?&#x27;冷启动自动值来自公开行业基准；用于规划，不是订单保证。&#x27;:&#x27;冷启动手动值来自你的漏斗假设；用于规划，不是订单保证。&#x27;)}root.querySelectorAll(&#x27;[data-results]&#x27;).forEach(e=&gt;e.hidden=!model);if(!model)return;const low=model.orders/(1+model.unc),high=model.orders/(1-model.unc),aov=+q(&#x27;aov&#x27;).value,cogs=+q(&#x27;cogs&#x27;).value/100,shipping=+q(&#x27;shipping&#x27;).value,fee=+q(&#x27;fee&#x27;).value/100,other=+q(&#x27;other&#x27;).value,be=Math.max(0,aov-aov*cogs-shipping-aov*fee-other),mp=model.orders*be-budget,conservativeProfit=low*be-budget;set(&#x27;ordersLow&#x27;,`${Math.floor(low)} 单`);set(&#x27;ordersMid&#x27;,`${Math.round(model.orders)} 单`);set(&#x27;ordersHigh&#x27;,`${Math.ceil(high)} 单`);set(&#x27;cpa&#x27;,`预测 CPA ${money(model.cpa)}`);set(&#x27;confidence&#x27;,model.confidence);set(&#x27;orderRange&#x27;,`${Math.floor(low)}–${Math.ceil(high)} 单`);set(&#x27;basis&#x27;,model.basis);set(&#x27;adBudget&#x27;,money(budget));set(&#x27;ordersRange&#x27;,`${Math.floor(low)}–${Math.ceil(high)} 单`);set(&#x27;breakeven&#x27;,money(be));set(&#x27;revenue&#x27;,money(model.orders*aov));set(&#x27;medianProfit&#x27;,money(mp));set(&#x27;safeProfit&#x27;,money(conservativeProfit));set(&#x27;verdict&#x27;,model.cpa&lt;=be?(conservativeProfit&gt;=0?&#x27;保守情景仍具备利润空间&#x27;:&#x27;中位可盈利，但保守情景可能亏损&#x27;):&#x27;预测CPA超过盈亏线，不建议投入此预算&#x27;)}
+      function updateB2B(){const budget=Math.max(1,+q(&#x27;bBudget&#x27;).value||1),cpl=Math.max(1,+q(&#x27;cpl&#x27;).value||1),raw=budget/cpl,valid=raw*(+q(&#x27;leadValid&#x27;).value/100),opps=valid*(+q(&#x27;moqRate&#x27;).value/100),quotes=opps*(+q(&#x27;quoteRate&#x27;).value/100),customers=quotes*(+q(&#x27;closeRate&#x27;).value/100),contract=+q(&#x27;contract&#x27;).value||0,margin=+q(&#x27;grossMargin&#x27;).value/100,salesCost=+q(&#x27;salesCost&#x27;).value||0,cycle=Math.max(1,+q(&#x27;salesCycle&#x27;).value||1),days=Math.max(1,+q(&#x27;bDays&#x27;).value||1),unc=.45,low=customers/(1+unc),high=customers/(1-unc),contractValue=customers*contract,profit=contractValue*margin-budget-opps*salesCost,path={dm:&#x27;TikTok 私信询盘&#x27;,instant:&#x27;TikTok 即时表单&#x27;,landing:&#x27;官网落地页表单&#x27;}[q(&#x27;leadPath&#x27;).value];set(&#x27;rawLeads&#x27;,`${Math.round(raw)} 条`);set(&#x27;leadCostLabel&#x27;,`CPL ${money(cpl)}`);set(&#x27;opportunities&#x27;,`${Math.round(opps)} 个`);set(&#x27;oppCost&#x27;,opps?`每商机 ${money(budget/opps)}`:&#x27;暂无商机&#x27;);set(&#x27;customers&#x27;,`${customers.toFixed(1)} 个`);set(&#x27;customerRange&#x27;,`${low.toFixed(1)}–${high.toFixed(1)} 个`);set(&#x27;pathLabel&#x27;,path);set(&#x27;validLeads&#x27;,`${valid.toFixed(1)} 条`);set(&#x27;quotes&#x27;,`${quotes.toFixed(1)} 个`);set(&#x27;bCac&#x27;,customers?money(budget/customers):&#x27;—&#x27;);set(&#x27;contractValue&#x27;,money(contractValue));set(&#x27;bProfit&#x27;,money(profit));set(&#x27;closeWindow&#x27;,`约 ${cycle} 天；本预测期 ${days} 天内未必全部成交`);set(&#x27;b2bNotice&#x27;,`${path}：按手动漏斗参数测算。线索、商机和成交客户必须分开记录。`)}
+      function update(){const business=q(&#x27;business&#x27;).value,b2b=business===&#x27;b2b&#x27;;root.querySelectorAll(&#x27;[data-toc]&#x27;).forEach(e=&gt;e.hidden=b2b);root.querySelectorAll(&#x27;[data-b2b]&#x27;).forEach(e=&gt;e.hidden=!b2b);if(b2b){root.querySelectorAll(&#x27;[data-b2b-results]&#x27;).forEach(e=&gt;e.hidden=false);updateB2B();return}syncBenchmark();const mode=q(&#x27;mode&#x27;).value;root.querySelectorAll(&#x27;[data-panel]&#x27;).forEach(e=&gt;e.hidden=e.dataset.panel!==mode);let model=null,budget=Math.max(1,+q(&#x27;budget&#x27;).value||1),days=Math.max(1,+q(&#x27;days&#x27;).value||30);if(mode===&#x27;daily&#x27;){if(dailyRows)model=dailyModel(dailyRows,budget,days);set(&#x27;modeNotice&#x27;,dailyRows?`已载入 ${dailyRows.length} 天数据，仅在本地计算。`:&#x27;请上传每日 CSV 后开始测算；未上传时不会使用演示数据。&#x27;)}else if(mode===&#x27;summary&#x27;){model=summaryModel(budget);set(&#x27;modeNotice&#x27;,&#x27;请填写三个独立周期，不要填写累计30/60/90天数据。&#x27;)}else{model=coldModel(budget);set(&#x27;modeNotice&#x27;,q(&#x27;benchmarkMode&#x27;).value===&#x27;auto&#x27;?&#x27;冷启动自动值来自公开行业基准；用于规划，不是订单保证。&#x27;:&#x27;冷启动手动值来自你的漏斗假设；用于规划，不是订单保证。&#x27;)}root.querySelectorAll(&#x27;[data-results]&#x27;).forEach(e=&gt;e.hidden=!model);if(!model)return;const low=model.orders/(1+model.unc),high=model.orders/(1-model.unc),aov=+q(&#x27;aov&#x27;).value,cogs=+q(&#x27;cogs&#x27;).value/100,shipping=+q(&#x27;shipping&#x27;).value,fee=+q(&#x27;fee&#x27;).value/100,other=+q(&#x27;other&#x27;).value,be=Math.max(0,aov-aov*cogs-shipping-aov*fee-other),mp=model.orders*be-budget,conservativeProfit=low*be-budget;set(&#x27;ordersLow&#x27;,`${Math.floor(low)} 单`);set(&#x27;ordersMid&#x27;,`${Math.round(model.orders)} 单`);set(&#x27;ordersHigh&#x27;,`${Math.ceil(high)} 单`);set(&#x27;cpa&#x27;,`预测 CPA ${money(model.cpa)}`);set(&#x27;confidence&#x27;,model.confidence);set(&#x27;orderRange&#x27;,`${Math.floor(low)}–${Math.ceil(high)} 单`);set(&#x27;basis&#x27;,model.basis);set(&#x27;adBudget&#x27;,money(budget));set(&#x27;ordersRange&#x27;,`${Math.floor(low)}–${Math.ceil(high)} 单`);set(&#x27;breakeven&#x27;,money(be));set(&#x27;revenue&#x27;,money(model.orders*aov));set(&#x27;medianProfit&#x27;,money(mp));set(&#x27;safeProfit&#x27;,money(conservativeProfit));set(&#x27;verdict&#x27;,model.cpa&lt;=be?(conservativeProfit&gt;=0?&#x27;保守情景仍具备利润空间&#x27;:&#x27;中位可盈利，但保守情景可能亏损&#x27;):&#x27;预测CPA超过盈亏线，不建议投入此预算&#x27;)}
       q(&#x27;file&#x27;).addEventListener(&#x27;change&#x27;,async e=&gt;{const f=e.target.files?.[0];if(!f)return;try{dailyRows=parseCSV(await f.text());update()}catch(err){dailyRows=null;set(&#x27;modeNotice&#x27;,`无法读取：${err.message}`);update()}});root.querySelectorAll(&#x27;[data-key]&#x27;).forEach(e=&gt;{if(e!==q(&#x27;file&#x27;))e.addEventListener(&#x27;input&#x27;,update)});update();
     })();
   &lt;/script&gt;
